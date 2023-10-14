@@ -34,6 +34,7 @@ function App() {
         <div className="App">
             <header className="App-header">
                 <h1>React and flask</h1>
+                <h2>This is an h2</h2>
                 {/* Calling a data from setdata for showing */}
                 <p>{data.name}</p>
                 <p>{data.age}</p>
