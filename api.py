@@ -1,6 +1,5 @@
 # Import flask and datetime module for showing date and time
 from flask import Flask
-from flask import Flask
 from flask_cors import CORS
 
 app = Flask(__name__)
