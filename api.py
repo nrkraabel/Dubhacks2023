@@ -9,8 +9,6 @@ import datetime
  
 x = str(datetime.datetime.now())
  
-
- 
 # Route for seeing a data
 @app.route('/data', methods=['GET', 'POST'])
 def get_time():
