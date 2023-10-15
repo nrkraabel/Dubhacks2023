@@ -1,0 +1,14 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\src",
+    "\\src\\examples",
+    "\\src\\layouts",
+    "\\src\\pages",
+    "\\src\\pages\\FindForm",
+    "\\src\\pages\\UploadForm",
+    "\\src\\pages\\UploadForm\\sections"
+  ],
+  "SelectedNode": "\\src\\layouts\\sections",
+  "PreviewInSolutionExplorer": false
+}

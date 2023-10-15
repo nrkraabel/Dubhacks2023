@@ -6,8 +6,7 @@ class SQLAccess:
     def __init__(self):
         self.server = 'dubhacks23.database.windows.net'
         self.database = 'DubHacks2023'
-        self.username = 'jacobfrumkin'
-        self.password = 'dubhacks123!'
+        """ removed username and password for privacy """
         self.connectString = 'Driver={ODBC Driver 18 for SQL Server};SERVER=' + self.server + ';DATABASE=' + self.database + ';UID=' + self.username + ';PWD=' + self.password
 
     def execute_non_query(self, query):
