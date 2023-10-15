@@ -1,6 +1,10 @@
 # Created by https://www.toptal.com/developers/gitignore/api/react,python,flask
 # Edit at https://www.toptal.com/developers/gitignore?templates=react,python,flask
 
+# next stuff
+app-nextjs/node-modules
+app-nextjs/.next
+
 ### Flask ###
 instance/*
 !instance/.gitignore
