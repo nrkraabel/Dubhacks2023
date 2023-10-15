@@ -1,7 +1,6 @@
 import tensorflow as tf
 import numpy as np
 
-#using prexisting class files
 class FaceMatching:
     def __init__(self, imgs, weights=None, sess=None):
         self.imgs = imgs

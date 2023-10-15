@@ -188,19 +188,5 @@ def super_resolve(img):
     
     return output_bgr
 
-#vastly under powerd 
 
 
-# model = modelLoad()
-# db = SQLAccess()
-# data = []
-# torch.set_printoptions(threshold=20_000)
-# for i in range(2000):
-#     query = """
-#     insert into FaceEmbeddingEntryTable ([UploadId],[VideoId], [Embedding], [Bluriness], [Longitude], [Latitude]) values 
-#     (?,?,?,?,?,?)
-#     """
-#     embedding = get_embedding("0000005.jpg",model)
-#     # chunks = split_embedding(str(embedding))
-#     data.append(["0",i,str(embedding), 0,0,0])
-# db.execute_non_query_many(query, data)
