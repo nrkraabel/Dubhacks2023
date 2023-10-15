@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import React, {useState} from 'react'
-import yelpSkiImg from '../public/assets/project-images/yelpSki1-Copy.png'
+import burnerImg from '../public/assets/contact.jpg'
 import Link from 'next/link'
 import {AiOutlineClose, AiOutlineMenu, AiOutlineMail} from 'react-icons/ai'
 import {FaGithub, FaLinkedinIn} from 'react-icons/fa'
@@ -14,9 +14,9 @@ const LandingLower = () => {
             <div className='max-w-[1240px] pt-32 mx-auto px-2'>
                 <p className='text-xl tracking-widest uppercase text-[#5651e5]'>Options</p>
                 <div className='grid sm:grid-cols-2 lg:grid-cols-3 gap-8'>
-                    <LandingItem title='About' backgroundImg={yelpSkiImg} projectUrl='/yelpSki' tech='test' />
-                    <LandingItem title='Search' backgroundImg={yelpSkiImg} projectUrl='/searchForm' tech='test' />
-                    <LandingItem title='Share' backgroundImg={yelpSkiImg} projectUrl='/shareForm' tech='test' />
+                    <LandingItem title='About' backgroundImg={burnerImg} projectUrl='/' tech='test' />
+                    <LandingItem title='Search' backgroundImg={burnerImg} projectUrl='/searchForm' tech='test' />
+                    <LandingItem title='Share' backgroundImg={burnerImg} projectUrl='/shareForm' tech='test' />
                 </div>
             </div>
         </div>

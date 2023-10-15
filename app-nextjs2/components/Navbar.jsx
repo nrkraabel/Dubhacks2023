@@ -113,7 +113,7 @@ const Navbar = () => {
                                 <li className='text-sm uppercase'>Home</li>
                             </div>
                         </Link>
-                        <Link href='/form'>
+                        <Link href='/searchForm'>
                             <div id='aboutLink' className='px-5 2xl:px-6 py-2   hover:rounded-xl hover:uppercase hover:bg-gradient-to-r hover:from-[#5651e5] hover:to-[#709dff] hover:text-white'>
                                 <li className='text-sm uppercase'>Form</li>
                             </div>
