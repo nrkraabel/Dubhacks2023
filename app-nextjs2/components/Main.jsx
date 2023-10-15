@@ -10,9 +10,6 @@ import {useRouter} from 'next/router'
 
 const Main = () => {
 
-    const router = useRouter()
-    const onMain = (router.asPath === '/#LandingLower')
-
     const [data, setdata] = useState({
         name: "",
         age: 0,
