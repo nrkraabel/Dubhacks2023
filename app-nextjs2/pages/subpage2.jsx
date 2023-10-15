@@ -2,6 +2,7 @@ import Image from 'next/image'
 import React, {useState} from 'react'
 import mathImg from '../public/assets/project-images/mandelbrot.jpg'
 import Link from 'next/link'
+import Navbar from '@/components/Navbar'
 import {AiOutlineClose, AiOutlineMenu, AiOutlineMail} from 'react-icons/ai'
 import {FaGithub, FaLinkedinIn} from 'react-icons/fa'
 import {BsFillPersonLinesFill} from 'react-icons/bs'
@@ -9,6 +10,8 @@ import {RiRadioButtonFill} from 'react-icons/ri'
 
 const math = () => {
     return (
+        <>
+        <Navbar />
         <div className='w-full overflow-hidden'>
             <div className='w-screen h-[30vh] lg:h-[40vh] relative'>
                 <div className='absolute top-0 left-0 w-full h-[30vh] lg:h-[40vh] bg-black/70 z-10' /> {/* self closing div tag (we're not putting anything in it) */}
@@ -44,6 +47,8 @@ const math = () => {
                 </Link>
             </div>
         </div>
+        </>
+
     );
 };
 

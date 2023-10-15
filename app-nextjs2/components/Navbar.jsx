@@ -29,9 +29,9 @@ const Navbar = () => {
         if (!section || !link) return;
 
         // if we're at top of page and havent done any scrolling yet (initial page load) highlight the home link
-        if (id === 'home' && window.pageYOffset < screen.height / 3) {
+/*         if (id === 'home' && window.pageYOffset < screen.height / 3) {
             link.classList.add('activeNavLink');
-        }
+        } */
 
         // now listen and highlight the appropriate links based on scroll position
         window.addEventListener('scroll', () => {
@@ -39,12 +39,12 @@ const Navbar = () => {
             const top = section.offsetTop;
             const bottom = top + section.offsetHeight;
         
-            if (currentPos >= top && currentPos <= bottom) {
+/*             if (currentPos >= top && currentPos <= bottom) {
                 link.classList.add('activeNavLink');
             } 
             else {
                 link.classList.remove('activeNavLink');
-            }
+            } */
         });
     }
     
@@ -61,12 +61,12 @@ const Navbar = () => {
     useEffect(() => {
         if (!onMain) {
             // if we're on a project page. we still want the nav bar to be opaque if the user scrolls down a project page
-            setShadow(false);
+ /*            setShadow(false);
             setNavBg('transparent')
             setLinkColor('#ecf0f3')
             setHamburgerIconColor('#ecf0f3')
 
-            window.addEventListener('scroll', handleShadow);
+            window.addEventListener('scroll', handleShadow); */
         }
         else {
             setShadow(true);
@@ -113,9 +113,9 @@ const Navbar = () => {
                                 <li className='text-sm uppercase'>Home</li>
                             </div>
                         </Link>
-                        <Link href='/subpage1'>
+                        <Link href='/form'>
                             <div id='aboutLink' className='px-5 2xl:px-6 py-2   hover:rounded-xl hover:uppercase hover:bg-gradient-to-r hover:from-[#5651e5] hover:to-[#709dff] hover:text-white'>
-                                <li className='text-sm uppercase'>Subpage1</li>
+                                <li className='text-sm uppercase'>Form</li>
                             </div>
                         </Link>
                         <Link href='/subpage2'>
