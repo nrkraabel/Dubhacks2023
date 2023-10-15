@@ -237,5 +237,5 @@ class FaceMatching:
         weights = np.load(weight_file)
         keys = sorted(weights.keys())
         for i, k in enumerate(keys):
-            print i, k, np.shape(weights[k])
+            print(i, k, np.shape(weights[k]))
             sess.run(self.parameters[i].assign(weights[k]))

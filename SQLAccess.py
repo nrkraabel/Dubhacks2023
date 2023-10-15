@@ -39,3 +39,12 @@ class SQLAccess:
         cnxn.commit()
         cnxn.close()
         return rows
+    
+    def fetch_all_records(self, table_name):
+        query = f"SELECT * FROM {table_name}"
+        return self.execute_non_query_select(query)
+    
+    def clear_dataset():
+        db = SQLAccess()
+        query = "DELETE FROM FaceEmbeddingEntryTable"
+        db.execute_non_query(query)

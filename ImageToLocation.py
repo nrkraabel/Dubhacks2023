@@ -49,25 +49,48 @@ class GeoDataset(torch.utils.data.Dataset):
             img = self.transform(img)
         return img, torch.tensor(coords)
     
-data = Create_Geo()
+def train_geo():    
+    data = Create_Geo()
 
-dataset = GeoDataset(data, transform)
-dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
+    dataset = GeoDataset(data, transform)
+    dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
 
-# Model
-model = resnet50(pretrained=True)
-model.fc = torch.nn.Linear(model.fc.in_features, 2)  # Latitude and Longitude
-optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
-criterion = torch.nn.MSELoss()  # Mean Squared Error Loss
+    # Model
+    model = resnet50(pretrained=True)
+    model.fc = torch.nn.Linear(model.fc.in_features, 2)  # Latitude and Longitude
+    optimizer = torch.optim.Adam(model.parameters(), lr=1e-4)
+    criterion = torch.nn.MSELoss()  # Mean Squared Error Loss
 
-epochs = 50
-# Training Loop
-model.train()
-for epoch in range(epochs):
-    for imgs, coords in dataloader:
-        outputs = model(imgs)
-        loss = criterion(outputs, coords)
-        optimizer.zero_grad()
-        loss.backward()
-        optimizer.step()
-    print(f"Epoch {epoch + 1}/{epochs}, Loss: {loss.item()}")
+    epochs = 50
+    # Training Loop
+    model.train()
+    for epoch in range(epochs):
+        for imgs, coords in dataloader:
+            outputs = model(imgs)
+            loss = criterion(outputs, coords)
+            optimizer.zero_grad()
+            loss.backward()
+            optimizer.step()
+        print(f"Epoch {epoch + 1}/{epochs}, Loss: {loss.item()}")
+
+def predict_Geo(img_path):
+    transform = transforms.Compose([
+        transforms.Resize((224, 224)),
+        transforms.ToTensor(),
+        transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
+    ])
+    model = resnet50(pretrained=True)
+    model.fc = torch.nn.Linear(model.fc.in_features, 2)  # Latitude and Longitude
+    model_path = "GeoLocationModel.pt"
+    model.load_state_dict(torch.load(model_path))
+    model.eval()
+
+    img = Image.open(img_path).convert("RGB")
+    img = transform(img).unsqueeze(0)  # Add batch dimension
+
+    with torch.no_grad():
+        output = model(img)
+    lat, lon = output[0][0].item(), output[0][1].item()
+
+    return lat, lon
+
